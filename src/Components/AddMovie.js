@@ -1,11 +1,14 @@
 import { useState } from "react";
+import useMovieContext from "../Hooks/useMovieContext.js";
 
-function AddMovie({onSubmit}) {
+function AddMovie() {
   const [title,setTitle] = useState('');
+  const { addMovie } = useMovieContext();
+
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    onSubmit(title);  
+    addMovie(title);  
     setTitle(''); 
   };
 

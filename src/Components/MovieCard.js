@@ -1,10 +1,14 @@
-function MovieCard({movie,onDelete, onEdit}) {
+import useMovieContext from "../Hooks/useMovieContext";
+
+function MovieCard({movie}) {
+  const { deleteMovieById,editMovieById } = useMovieContext();
+
   const onDeleteCLick = () => {
-    onDelete(movie.id);
+    deleteMovieById(movie.id);
   };
 
   const onEditCLick = () => {
-    onEdit(movie.id,"Modified");
+    editMovieById(movie.id,"Modified");
   };
 
     return (
